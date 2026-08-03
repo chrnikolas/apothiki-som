@@ -1,139 +1,250 @@
 body {
+
     font-family: "Anonymous Pro", monospace;
+
     max-width: 600px;
+
     margin: 40px auto;
+
     padding: 20px;
+
     background-color: #89523D;
-    background-image: linear-gradient(rgba(137,82,61,0.75), rgba(137,82,61,0.88)), url("background.jpg");
+
+    background-image:
+        linear-gradient(
+            rgba(137,82,61,0.75),
+            rgba(137,82,61,0.88)
+        ),
+        url("background.jpg");
+
     background-size: cover;
+
     background-position: center;
+
     background-attachment: fixed;
+
     color: #FAF3ED;
+
     text-align: center;
+
 }
+
 
 h1 {
+
     font-size: 30px;
+
 }
+
 
 h2 {
+
     margin-top: 80px;
+
     font-size: 22px;
+
 }
 
+
 h3 {
+
     font-size: 18px;
-    margin-bottom: 15px;
+
+    margin-bottom: 20px;
+
 }
 
 p {
     font-size: 15px;
+
     padding: 0;
+
     line-height: 1.5;
 }
 
 section {
+
     margin-bottom: 50px;
+
 }
 
 
 /* Shed layout */
+
 #shed {
+
     display: grid;
+
     grid-template-columns: repeat(3, 60px);
+
     grid-template-rows: repeat(7, 60px);
+
     gap: 20px;
+
     justify-content: center;
+
     margin: 30px auto;
+
 }
 
 
 /* Pot */
 
 .pot {
+
     width: 60px;
+
     height: 60px;
+
     border-radius: 50%;
+
     background: #FAF3ED;
+
     color: #89523D;
+
     cursor: pointer;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     font-size: 14px;
+
     transition: .2s;
+
 }
+
 
 /* Empty pot */
+
 .pot.empty {
+
     background: rgba(250,243,237,.25);
+
     color: #FAF3ED;
+
 }
+
 
 /* Hover */
+
 .pot:hover {
+
     background: #FAF3ED;
+
     color: #89523D;
+
 }
+
 
 .pot.empty:hover {
+
     background: rgba(250,243,237,.5);
+
     color: #FAF3ED;
+
 }
 
+
 /* Selected */
+
 .pot.active {
+
     outline: 3px solid #FAF3ED;
+
     outline-offset: 4px;
+
 }
 
 
 /* Information panel */
+
 #info {
+
     padding-top: 20px;
+
     line-height: 1.2;
+
 }
+
 
 #info .batch {
+
     font-size: 14px;
+
     opacity: .8;
+
     margin-bottom: 15px;
+
 }
+
 
 #info .producer {
+
     font-size: 18px;
+
     font-weight: bold;
+
     margin-bottom: 15px;
+
 }
+
 
 #info .title {
+
     font-size: 15px;
+
     margin-bottom: 15px;
+
 }
+
 
 #info .description {
+
     font-size: 15px;
+
 }
+
 
 /* Section divider */
+
 .divider {
+
     width: 33%;
+
     height: 1px;
+
     background: #FAF3ED;
+
     margin: 20px auto;
+
 }
+
 
 ul {
+
     list-style-position: inside;
+
     font-size: 15px;
+
     padding: 0;
+
     line-height: 1.5;
+
 }
+
 
 a {
+
     color: #FAF3ED;
+
 }
 
+
 a:hover {
+
     opacity: .7;
+
 }
