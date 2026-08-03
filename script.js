@@ -28,6 +28,8 @@ const pots = [
 const shed = document.getElementById("shed");
 const info = document.getElementById("info");
 
+let activePot = null;
+
 const positions = {
 
     "Π01":[1,1],
@@ -55,6 +57,16 @@ const positions = {
 
 };
 
+function clearSelection() {
+
+    activePot = null;
+
+    document.querySelectorAll(".pot").forEach(p => p.classList.remove("active"));
+
+    info.innerHTML = "";
+
+}
+
 pots.forEach((potData) => {
 
     const pot = document.createElement("div");
@@ -70,7 +82,18 @@ pots.forEach((potData) => {
         pot.classList.add("empty");
     }
 
-    pot.onclick = function () {
+    pot.onclick = function (e) {
+
+        e.stopPropagation();
+
+        if (activePot === pot) {
+
+            clearSelection();
+            return;
+
+        }
+
+        activePot = pot;
 
         document.querySelectorAll(".pot").forEach(p => p.classList.remove("active"));
 
@@ -93,9 +116,17 @@ pots.forEach((potData) => {
             <div class="description">
                 ${potData.description}
             </div>
+
         `;
+
     };
 
     shed.appendChild(pot);
+
+});
+
+document.addEventListener("click", function () {
+
+    clearSelection();
 
 });
