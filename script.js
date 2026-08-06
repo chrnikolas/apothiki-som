@@ -1,3 +1,7 @@
+// =======================================================
+// POTS
+// =======================================================
+
 const pots = [
 
 { id:"Π15", batch:"Άδειο", producer:"-", title:"-", description:"-" },
@@ -128,5 +132,93 @@ pots.forEach((potData) => {
 document.addEventListener("click", function () {
 
     clearSelection();
+
+});
+
+// =======================================================
+// GALLERY
+// =======================================================
+
+const galleryImages = [
+
+    "images/gallery/1.jpg",
+    "images/gallery/2.jpg",
+    "images/gallery/3.jpg",
+    "images/gallery/4.jpg"
+
+];
+
+let currentImage = 0;
+
+const gallery = document.getElementById("gallery-image");
+
+const next = document.getElementById("next");
+
+const prev = document.getElementById("prev");
+
+function showImage(){
+
+    gallery.src = galleryImages[currentImage];
+
+}
+
+next.onclick = ()=>{
+
+    currentImage++;
+
+    if(currentImage>=galleryImages.length){
+
+        currentImage=0;
+
+    }
+
+    showImage();
+
+};
+
+prev.onclick = ()=>{
+
+    currentImage--;
+
+    if(currentImage<0){
+
+        currentImage=galleryImages.length-1;
+
+    }
+
+    showImage();
+
+};
+
+
+// =======================================================
+// SWIPE (mobile)
+// =======================================================
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+gallery.addEventListener("touchstart",(e)=>{
+
+    touchStartX = e.changedTouches[0].screenX;
+
+});
+
+gallery.addEventListener("touchend",(e)=>{
+
+    touchEndX = e.changedTouches[0].screenX;
+
+    if(touchEndX < touchStartX - 40){
+
+        next.click();
+
+    }
+
+    if(touchEndX > touchStartX + 40){
+
+        prev.click();
+
+    }
 
 });
