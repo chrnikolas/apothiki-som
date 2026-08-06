@@ -298,6 +298,15 @@ footer{
         padding:80px 20px;
     }
    
+    .hero-image{
+        clip-path:polygon(
+            0 0,
+            100% 15%,
+            25% 100%,
+            0 100%
+        );
+    }
+   
     section,footer{
        margin-top:60px;
        margin-bottom:60px;
