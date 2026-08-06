@@ -1,224 +1,120 @@
-// =======================================================
-// POTS
-// =======================================================
+<!DOCTYPE html>
+<html lang="el">
 
-const pots = [
+<head>
 
-{ id:"Π15", batch:"Άδειο", producer:"-", title:"-", description:"-" },
-{ id:"Π16", batch:"Άδειο", producer:"-", title:"-", description:"-" },
-{ id:"Π17", batch:"Άδειο", producer:"-", title:"-", description:"-" },
-{ id:"Π18", batch:"Άδειο", producer:"-", title:"-", description:"-" },
-{ id:"Π19", batch:"Άδειο", producer:"-", title:"-", description:"-" },
-{ id:"Π20", batch:"#250220", producer:"Κώστας Ντάνος", title:"Ανθισμένο Ξυνιστέρι, Μάνα 2025", description:"(χωρίς περιγραφή)" },
-{ id:"Π14", batch:"#240214", producer:"Κώστας Ντάνος", title:"Ανθισμένο Ξυνιστέρι, Μάνα 2024", description:"(χωρίς περιγραφή)" },
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{ id:"Π08", batch:"Άδειο", producer:"-", title:"-", description:"-" },
-{ id:"Π09", batch:"Άδειο", producer:"-", title:"-", description:"-" },
-{ id:"Π10", batch:"#260310", producer:"Κωνσταντίνα Νικολάου", title:"Λευκό 2026", description:"(χωρίς περιγραφή)" },
-{ id:"Π11", batch:"#260311", producer:"Κωνσταντίνα Νικολάου", title:"Ερυθρό 2026", description:"(χωρίς περιγραφή)" },
-{ id:"Π12", batch:"#260212", producer:"Κώστας Ντάνος", title:"Ξυνιστέρι 2026", description:"(χωρίς περιγραφή)" },
-{ id:"Π13", batch:"Άδειο", producer:"-", title:"-", description:"-" },
+    <title>ΑΠΟΘΗΚΗ Σ.Ο.Μ.</title>
 
-{ id:"Π01", batch:"Άδειο", producer:"-", title:"-", description:"-" },
-{ id:"Π02", batch:"#260102", producer:"Οινοποιείο Ρεβέκκα", title:"Μικροπαρτίδες 2026", description:"(χωρίς περιγραφή)" },
-{ id:"Π03", batch:"#260103", producer:"Οινοποιείο Ρεβέκκα", title:"Μικροπαρτίδες 2026", description:"(χωρίς περιγραφή)" },
-{ id:"Π04", batch:"#250116", producer:"Οινοποιείο Ρεβέκκα", title:"Μικροπαρτίδες 2025", description:"(χωρίς περιγραφή)" },
-{ id:"Π05", batch:"#260205", producer:"Κώστας Ντάνος", title:"Ξυνιστέρι 2026", description:"(χωρίς περιγραφή)" },
-{ id:"Π06", batch:"Άδειο", producer:"-", title:"-", description:"-" },
-{ id:"Π07", batch:"#260207", producer:"Κώστας Ντάνος", title:"Ανθισμένο Ξυνιστέρι, Μάνα 2026", description:"(χωρίς περιγραφή)" }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-];
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-const shed = document.getElementById("shed");
-const info = document.getElementById("info");
+    <link rel="stylesheet" href="style.css">
 
-let activePot = null;
+</head>
 
-const positions = {
+<body>
 
-    "Π01":[1,1],
-    "Π02":[1,2],
-    "Π03":[1,3],
-    "Π04":[1,4],
-    "Π05":[1,5],
-    "Π06":[1,6],
-    "Π07":[1,7],
+<!-- HERO -->
 
-    "Π08":[2,1],
-    "Π09":[2,2],
-    "Π10":[2,3],
-    "Π11":[2,4],
-    "Π12":[2,5],
-    "Π13":[2,6],
-    "Π14":[2,7],
+<header id="hero">
 
-    "Π15":[3,1],
-    "Π16":[3,2],
-    "Π17":[3,3],
-    "Π18":[3,4],
-    "Π19":[3,5],
-    "Π20":[3,6]
+    <div class="hero-image"></div>
 
-};
+    <div class="hero-overlay">
 
-function clearSelection() {
+        <h1>ΑΠΟΘΗΚΗ Σ.Ο.Μ.</h1>
 
-    activePot = null;
+        <div class="divider"></div>
 
-    document.querySelectorAll(".pot").forEach(p => p.classList.remove("active"));
+    </div>
 
-    info.innerHTML = "";
+</header>
 
-}
 
-pots.forEach((potData) => {
 
-    const pot = document.createElement("div");
+<!-- INTRO -->
 
-    pot.className = "pot";
+<section id="intro">
 
-    pot.innerHTML = potData.id.replace("Π","");
+    <div class="content">
 
-    pot.style.gridColumn = positions[potData.id][0];
-    pot.style.gridRow = positions[potData.id][1];
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
 
-    if (potData.batch === "Άδειο") {
-        pot.classList.add("empty");
-    }
+</section>
 
-    pot.onclick = function (e) {
 
-        e.stopPropagation();
 
-        if (activePot === pot) {
+<!-- LIVE SHED -->
 
-            clearSelection();
-            return;
+<section id="shed-section">
 
-        }
+    <h2>στα πιθάρια, σήμερα</h2>
+    <div class="divider2"></div>
+    <div id="shed"></div>
 
-        activePot = pot;
+    <div id="info">
 
-        document.querySelectorAll(".pot").forEach(p => p.classList.remove("active"));
+        <p>Επίλεξε Πιθάρι →</p>
 
-        pot.classList.add("active");
+    </div>
 
-        info.innerHTML = `
+</section>
 
-            <div class="batch">
-                ${potData.batch}
-            </div>
 
-            <div class="producer">
-                ${potData.producer}
-            </div>
 
-            <div class="title">
-                ${potData.title}
-            </div>
+<!-- RELEASED -->
 
-            <div class="description">
-                ${potData.description}
-            </div>
+<section id="released">
 
-        `;
+    <h2>Κυκλοφορούν</h2>
+    <div class="divider2"></div>
+    <ul>
 
-    };
+        <li>#240214 | Κώστας Ντάνος,  Ανθισμένο Ξυνιστέρι 2024 <a href="#">[PDF]</a></li>
 
-    shed.appendChild(pot);
+        <li>#250220 | Κώστας Ντάνος,  Ανθισμένο Ξυνιστέρι 2025 <a href="#">[PDF]</a></li>
 
-});
+    </ul>
 
-document.addEventListener("click", function () {
+</section>
 
-    clearSelection();
 
-});
 
-// =======================================================
-// GALLERY
-// =======================================================
+<!-- GALLERY -->
 
-const galleryImages = [
+<section id="gallery">
+    <div class="gallery">
 
-    "images/gallery/1.jpg",
-    "images/gallery/2.jpg",
-    "images/gallery/3.jpg",
-    "images/gallery/4.jpg"
+        <button id="prev">&#10094;</button>
 
-];
+        <img id="gallery-image" src="images/gallery/1.jpg">
 
-let currentImage = 0;
+        <button id="next">&#10095;</button>
 
-const gallery = document.getElementById("gallery-image");
+    </div>
 
-const next = document.getElementById("next");
+</section>
 
-const prev = document.getElementById("prev");
 
-function showImage(){
 
-    gallery.src = galleryImages[currentImage];
+<!-- CONTACT -->
 
-}
+<footer>
+    <h3>-</h3>
+    <p>## ######,  address@mail.com,  @ApothikiSOM</p> 
 
-next.onclick = ()=>{
+</footer>
 
-    currentImage++;
 
-    if(currentImage>=galleryImages.length){
+<script src="script.js"></script>
 
-        currentImage=0;
+</body>
 
-    }
-
-    showImage();
-
-};
-
-prev.onclick = ()=>{
-
-    currentImage--;
-
-    if(currentImage<0){
-
-        currentImage=galleryImages.length-1;
-
-    }
-
-    showImage();
-
-};
-
-
-// =======================================================
-// SWIPE (mobile)
-// =======================================================
-
-let touchStartX = 0;
-
-let touchEndX = 0;
-
-gallery.addEventListener("touchstart",(e)=>{
-
-    touchStartX = e.changedTouches[0].screenX;
-
-});
-
-gallery.addEventListener("touchend",(e)=>{
-
-    touchEndX = e.changedTouches[0].screenX;
-
-    if(touchEndX < touchStartX - 40){
-
-        next.click();
-
-    }
-
-    if(touchEndX > touchStartX + 40){
-
-        prev.click();
-
-    }
-
-});
+</html>
