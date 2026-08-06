@@ -299,12 +299,13 @@ footer{
     }
    
     .hero-image{
-        clip-path:polygon(
+        clip-path: polygon(
             0 0,
-            100% 15%,
-            25% 100%,
-            0 100%
-        );
+           100% 0,
+           100% 15%,
+           15% 100%,
+           0 100%
+    );
     }
    
     section,footer{
@@ -338,7 +339,11 @@ footer{
     .gallery{
         gap:10px;
     }
-
+   
+.content{
+    max-width:100%
+}
+   
     .gallery button{
         font-size:28px;
     }
