@@ -297,13 +297,33 @@ footer{
     footer{
         padding:80px 20px;
     }
+   
+    section,footer{
+       margin-top:60px;
+       margin-bottom:60px;
+       margin-left:30px;
+       margin-right:30px;
+       width:100%;
+    }
+   
+    .divider{
+        width:90%;
+    }
 
+    .divider2{
+        width:75%;
+    }
+   
     h2{
-        font-size:22px;
+        font-size:20px;
+    }
+
+    h3{
+        font-size:18px;
     }
 
     p{
-        font-size:16px;
+        font-size:15px;
     }
 
     .gallery{
